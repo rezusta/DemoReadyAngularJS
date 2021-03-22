@@ -1,0 +1,56 @@
+<md-subheader class="md-primary" style="background-color: rgb(221, 255, 221);">Gestión de Asignaturas</md-subheader>
+<div class="cont">
+    <div class="formulario">
+        <md-subheader class="md-primary" style="background-color: rgb(221, 247, 255);">Editar Asignatura</md-subheader>
+        <div style="padding: 20px;">
+
+            <md-input-container class="md-block">
+                <label>Nombre:</label>
+                <input ng-model="nombre" type="text" id="nombre" name="nombre">
+            </md-input-container>
+
+            <div layout-gt-sm="row">
+
+                <md-input-container flex-gt-sm>
+                    <label>Aula:</label>
+                    <input ng-model="aula" type="text" id="aula" name="aula">
+                </md-input-container>
+
+                <md-input-container flex-gt-sm>
+                    <label>Día:</label>
+                    <md-select ng-model="dia">
+                      <md-option ng-value="1">Lunes</md-option>
+                      <md-option ng-value="2">Martes</md-option>
+                      <md-option ng-value="3">Miércoles</md-option>
+                      <md-option ng-value="4">Jueves</md-option>
+                      <md-option ng-value="5">Viernes</md-option>
+                      <md-option ng-value="6">Sábado</md-option>
+                      <md-option ng-value="7">Domingo</md-option>
+                    </md-select>
+                  </md-input-container>
+
+            </div>
+            <div layout-gt-sm="row">
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Hora:</label>
+                    <input ng-model="hora" type="text" id="hora" name="hora">
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Año:</label>
+                    <input ng-model="ano" type="text" id="ano" name="ano">
+                </md-input-container>
+
+            </div>
+            <div style="text-align: right;">
+                <md-button class="md-raised md-primary botonDerecha" ng-click="actualizarAsignatura(ID, nombre, aula, dia, hora, ano)">
+                    Guardar
+                </md-button>
+                <md-button class="md-raised md-warn botonDerecha" style="color:white" ng-click="cancelar()">
+                    Volver
+                </md-button>
+            </div>
+        </div>
+    </div>
+</div>

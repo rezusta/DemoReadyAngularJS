@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html ng-app="demoAngularJS">
+
+  <head>
+    <link rel="stylesheet" href="lib/styles.css" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="lib/angular-route.js"></script>
+    <script src="../node_modules/angular-aria/angular-aria.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../node_modules/angular-messages/angular-messages.js"></script>
+    <script src="../node_modules/angular-material/angular-material.js"></script>
+    <script type="text/javascript" src="lib/app.js"></script>
+    <script type="text/javascript" src="lib/services/ServicioAlumnos.js"></script>
+    <script type="text/javascript" src="lib/services/ServicioAsignaturas.js"></script>
+    <script type="text/javascript" src="lib/alumnos/ControladorAlumnos.js"></script>
+    <script type="text/javascript" src="lib/asignaturas/ControladorAsignaturas.js"></script>
+    <script type="text/javascript" src="lib/MainControlador.js"></script>
+    <script type="text/javascript" src="lib/sidenav/ControladorSidenav.js"></script>
+  </head>
+
+  <body>
+    <div ng-controller="MainControlador">
+      <md-sidenav class="md-sidenav-left" md-component-id="right">
+
+        <md-toolbar class="md-theme-light">
+          <h1 class="md-toolbar-tools">Menú</h1>
+        </md-toolbar>
+        <md-content ng-controller="ControladorSidenav" style="text-align: left;" layout-padding>
+          <div class="menuItem" ng-click="alumnos()">
+            <div class="menuItem">Alumnos</div>
+          </div>
+          <div class="menuItem" ng-click="asignaturas()">
+            <div class="menuItem">Asignaturas</div>
+          </div>
+        </md-content>
+      </md-sidenav>
+
+      <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+          <md-icon class="md-secondary md-warn menuicon" style="margin-right: 10px;" ng-click="toggleRight()" aria-label="Chat" md-svg-icon="lib/assets/menu.svg"></md-icon>
+          <h2 flex md-truncate>Demo AngularJS</h2>
+          <span>TFM - Iñigo Rezusta</span>
+        </div>
+      </md-toolbar>
+    </div>
+    <div ng-view></div>
+  </body>
+</html>

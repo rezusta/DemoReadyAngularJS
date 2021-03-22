@@ -1,0 +1,32 @@
+<md-subheader class="md-primary" style="background-color: rgb(221, 255, 221);">Gestión de Alumnos</md-subheader>
+<div class="cont">
+    <div class="formularioCrear">
+        <md-subheader class="md-primary" style="background-color: rgb(221, 247, 255);">Nuevo Alumno</md-subheader>
+        <div style="padding: 20px;">
+
+            <md-input-container class="md-block">
+                <label>NIA:</label>
+                <input ng-model="NIA" type="text" id="NIA" name="NIA">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Nombre:</label>
+                <input ng-model="nombre" type="text" id="Nombre" name="Nombre">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Apellido:</label>
+                <input ng-model="apellido" type="text" id="Apellido" name="Apellido">
+            </md-input-container>
+
+            <div style="text-align: right;">
+                <md-button class="md-raised md-primary botonDerecha" ng-click="crearAlumno(NIA, nombre, apellido)">
+                    Crear
+                </md-button>
+                <md-button class="md-raised md-warn botonDerecha" style="color: white" ng-click="cancelar()">
+                    Cancelar
+                </md-button>
+            </div>
+        </div>
+    </div>
+</div>

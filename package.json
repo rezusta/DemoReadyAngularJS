@@ -1,0 +1,27 @@
+{
+  "name": "apirest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular-animate": "^1.8.2",
+    "angular-aria": "^1.8.2",
+    "angular-material": "^1.2.2",
+    "angular-messages": "^1.8.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "http-proxy": "^1.17.0",
+    "nodemon": "^1.18.10",
+    "pg": "^7.8.1",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "engines": {
+    "node": "10.15.0"
+  }
+}

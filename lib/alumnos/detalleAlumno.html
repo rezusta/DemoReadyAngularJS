@@ -1,0 +1,69 @@
+<md-subheader class="md-primary" style="background-color: rgb(221, 255, 221);">Gestión de Alumnos</md-subheader>
+<div class="cont">
+    <div>
+        <div class="formulario" style="float:left;">
+            <md-subheader class="md-primary" style="background-color: rgb(221, 247, 255);">Editar Alumno</md-subheader>
+            <div style="padding: 20px;">
+
+                <md-input-container class="md-block">
+                    <label>NIA:</label>
+                    <input ng-model="NIA" ng-disabled="true" type="text" id="NIA" name="NIA">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Nombre:</label>
+                    <input ng-model="nombre" type="text" id="Nombre" name="Nombre">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Apellido:</label>
+                    <input ng-model="apellido" type="text" id="Apellido" name="Apellido">
+                </md-input-container>
+
+                <div style="text-align: right;">
+                    <md-button class="md-raised md-primary botonDerecha" ng-click="actualizarAlumno(NIA, nombre, apellido)">
+                        Guardar
+                    </md-button>
+                    <md-button class="md-raised md-warn botonDerecha" style="color:white" ng-click="cancelar()">
+                        Volver
+                    </md-button>
+                </div>
+            </div>
+        </div>
+        <div style="float:left; margin-left: 20px; width: 30%;">
+            <div class="container">
+                <md-subheader class="md-primary" style="background-color: rgb(221, 247, 255);">Asignaturas del Alumno</md-subheader>
+                <div style="padding: 20px;">
+                    <span ng-if="asignaturasSemana.length == 0">El alumno no tiene asignaturas.</span>
+                    <md-list>
+                        <md-list-item ng-repeat="asignatura in asignaturasSemana">
+                            <span>{{asignatura.nombre}}</span >
+                            <md-icon class="md-secondary md-warn"  ng-click="eliminarAlumnoAsignatura(NIA, asignatura.ID)" aria-label="Chat" md-svg-icon="lib/assets/delete.svg"></md-icon>
+                        </md-list-item>
+                    </md-list>
+    
+                    <h4>Añadir asignatura</h4>
+                    <md-input-container style="width: 50%">
+                        <label>Asignatura:</label>
+                        <md-select ng-model="ID">
+                            <md-option ng-repeat="asignatura in asignaturas" ng-value="asignatura.ID">{{asignatura.nombre}}</md-option>
+                        </md-select>
+                      </md-input-container>
+    
+                    <md-button ng-if="ID" class="md-raised md-primary" ng-click="addUsuarioAsignatura(NIA, ID)">AÑADIR</md-button>
+                </div>
+            </div>
+        </div>
+        <div style="float:left; margin-left: 20px; width: 30%;">
+            <div ng-if="asignaturasDia.length != 0" class="container">
+                <md-subheader class="md-primary" style="background-color: rgb(221, 247, 255);">Asignaturas del alumno hoy</md-subheader>
+                <span ng-if="asignaturasDia.length == 0 && asignaturasSemana.length != 0">El alumno no tiene asignaturas hoy.</span>
+                <md-list>
+                    <md-list-item ng-repeat="asignatura in asignaturasDia">
+                        <span>{{asignatura.nombre}} ({{asignatura.hora}}h)</span >
+                    </md-list-item>
+                </md-list>
+            </div>
+        </div>
+    </div>
+</div>

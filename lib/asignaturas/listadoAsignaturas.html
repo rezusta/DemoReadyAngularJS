@@ -1,0 +1,44 @@
+<md-subheader class="md-primary" style="background-color: rgb(221, 255, 221);">Gestión de Asignaturas</md-subheader>
+<div class="cont">
+    <div style="width: 50%; display: inline-block;">
+        <h3 ng-if="asignaturas.length > 0" style="float:left;">Listado de asignaturas</h3>
+        <md-button class="md-raised md-primary" style="float: right; margin-top: 20px;" ng-click="navegaPantallaCrearAsignatura()">Crear asignatura</md-button>
+    </div>
+    <table class="tablaAmp" ng-if="asignaturas.length > 0" style="clear: both;">
+        <md-divider style="margin-bottom: 20px; width: 210px;"></md-divider>
+        <thead>
+            <tr>
+                <th>Asignatura</th>
+                <th>Aula</th>
+                <th>Dia</th>
+                <th>Hora</th>
+                <th>Año</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="asignatura in asignaturas">
+                <td>{{asignatura.nombre}}</td>
+                <td>{{asignatura.aula}}</td>
+                <td ng-if="asignatura.dia == 1">Lunes</td>
+                <td ng-if="asignatura.dia == 2">Martes</td>
+                <td ng-if="asignatura.dia == 3">Miércoles</td>
+                <td ng-if="asignatura.dia == 4">Jueves</td>
+                <td ng-if="asignatura.dia == 5">Viernes</td>
+                <td ng-if="asignatura.dia == 6">Sábado</td>
+                <td ng-if="asignatura.dia == 7">Domingo</td>
+                <td>{{asignatura.hora}}h</td>
+                <td>{{asignatura.ano}}</td>
+                <td style="float: right;">
+                    <md-button ng-click="detalleAsignatura(asignatura.ID)"
+                            class="md-icon-button md-primary">
+                        <md-icon md-svg-icon="lib/assets/edit.svg"></md-icon>
+                    </md-button>
+                    <md-button ng-click="eliminarAsignatura(asignatura.ID)"
+                            class="md-icon-button md-warn">
+                        <md-icon md-svg-icon="lib/assets/delete.svg"></md-icon>
+                    </md-button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
