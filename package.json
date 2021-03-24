@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"tsc": "tsc -p . -w"
   },
   "keywords": [],
   "author": "",
@@ -23,5 +24,11 @@
   },
   "engines": {
     "node": "10.15.0"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.8.1",
+    "@types/core-js": "^2.5.4",
+    "@types/jasmine": "^3.6.7",
+    "typescript": "^4.2.3"
   }
 }

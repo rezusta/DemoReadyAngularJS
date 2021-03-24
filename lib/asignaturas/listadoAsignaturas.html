@@ -1,10 +1,10 @@
 <md-subheader class="md-primary" style="background-color: rgb(221, 255, 221);">Gestión de Asignaturas</md-subheader>
 <div class="cont">
     <div style="width: 50%; display: inline-block;">
-        <h3 ng-if="asignaturas.length > 0" style="float:left;">Listado de asignaturas</h3>
-        <md-button class="md-raised md-primary" style="float: right; margin-top: 20px;" ng-click="navegaPantallaCrearAsignatura()">Crear asignatura</md-button>
+        <h3 ng-if="$ctrl.asignaturas.length > 0" style="float:left;">Listado de asignaturas</h3>
+        <md-button class="md-raised md-primary" style="float: right; margin-top: 20px;" ng-click="$ctrl.navegaPantallaCrearAsignatura()">Crear asignatura</md-button>
     </div>
-    <table class="tablaAmp" ng-if="asignaturas.length > 0" style="clear: both;">
+    <table class="tablaAmp" ng-if="$ctrl.asignaturas.length > 0" style="clear: both;">
         <md-divider style="margin-bottom: 20px; width: 210px;"></md-divider>
         <thead>
             <tr>
@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="asignatura in asignaturas">
+            <tr ng-repeat="asignatura in $ctrl.asignaturas">
                 <td>{{asignatura.nombre}}</td>
                 <td>{{asignatura.aula}}</td>
                 <td ng-if="asignatura.dia == 1">Lunes</td>
@@ -29,11 +29,11 @@
                 <td>{{asignatura.hora}}h</td>
                 <td>{{asignatura.ano}}</td>
                 <td style="float: right;">
-                    <md-button ng-click="detalleAsignatura(asignatura.ID)"
+                    <md-button ng-click="$ctrl.detalleAsignatura(asignatura.ID)"
                             class="md-icon-button md-primary">
                         <md-icon md-svg-icon="lib/assets/edit.svg"></md-icon>
                     </md-button>
-                    <md-button ng-click="eliminarAsignatura(asignatura.ID)"
+                    <md-button ng-click="$ctrl.eliminarAsignatura(asignatura.ID)"
                             class="md-icon-button md-warn">
                         <md-icon md-svg-icon="lib/assets/delete.svg"></md-icon>
                     </md-button>

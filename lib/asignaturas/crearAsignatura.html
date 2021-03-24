@@ -6,19 +6,19 @@
 
             <md-input-container class="md-block">
                 <label>Nombre:</label>
-                <input ng-model="nombre" type="text" id="nombre" name="nombre">
+                <input ng-model="$ctrl.nombre" type="text" id="nombre" name="nombre">
             </md-input-container>
 
             <div layout-gt-sm="row">
 
                 <md-input-container flex-gt-sm>
                     <label>Aula:</label>
-                    <input ng-model="aula" type="text" id="aula" name="aula">
+                    <input ng-model="$ctrl.aula" type="text" id="aula" name="aula">
                 </md-input-container>
 
                 <md-input-container flex-gt-sm>
                     <label>Día:</label>
-                    <md-select ng-model="dia">
+                    <md-select ng-model="$ctrl.dia">
                       <md-option ng-value="1">Lunes</md-option>
                       <md-option ng-value="2">Martes</md-option>
                       <md-option ng-value="3">Miércoles</md-option>
@@ -34,20 +34,20 @@
 
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Hora:</label>
-                    <input ng-model="hora" type="text" id="hora" name="hora">
+                    <input ng-model="$ctrl.hora" type="text" id="hora" name="hora">
                 </md-input-container>
 
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Año:</label>
-                    <input ng-model="ano" type="text" id="ano" name="ano">
+                    <input ng-model="$ctrl.ano" type="text" id="ano" name="ano">
                 </md-input-container>
 
             </div>
             <div style="text-align: right;">
-                <md-button class="md-raised md-primary botonDerecha" ng-click="crearAsignatura(nombre, aula, dia, hora, ano)">
+                <md-button class="md-raised md-primary botonDerecha" ng-click="$ctrl.crearAsignatura($ctrl.nombre, $ctrl.aula, $ctrl.dia, $ctrl.hora, $ctrl.ano)">
                     Guardar
                 </md-button>
-                <md-button class="md-raised md-warn botonDerecha" style="color: white" ng-click="cancelar()">
+                <md-button class="md-raised md-warn botonDerecha" style="color: white" ng-click="$ctrl.cancelar()">
                     Cancelar
                 </md-button>
             </div>

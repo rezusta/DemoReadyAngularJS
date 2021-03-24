@@ -1,12 +1,12 @@
 <md-subheader class="md-primary" style="background-color: rgb(221, 255, 221);">Gestión de Alumnos</md-subheader>
 <div class="cont">
     <div style="width: 40%; display: inline-block;">
-        <h3 ng-if="alumnos.length > 0" style="float:left;">Listado de alumnos</h3>
-        <md-button class="md-raised md-primary" style="float: right; margin-top: 20px;" ng-click="navegaPantallaCrearAlumno()">Crear alumno</md-button>
+        <h3 ng-if="$ctrl.alumnos.length > 0" style="float:left;">Listado de alumnos</h3>
+        <md-button class="md-raised md-primary" style="float: right; margin-top: 20px;" ng-click="$ctrl.navegaPantallaCrearAlumno()">Crear alumno</md-button>
     </div>
     <div style="clear: both;">
         <md-divider style="margin-bottom: 20px; width: 180px;"></md-divider>
-        <table class="tabla" style="width: 40%;" ng-if="alumnos.length > 0">
+        <table class="tabla" style="width: 40%;" ng-if="$ctrl.alumnos.length > 0">
             <thead>
                 <tr>
                     <th>NIA</th>
@@ -15,16 +15,16 @@
                 </tr>
             </thead>
             <tbody >
-                <tr ng-repeat="alumno in alumnos">
+                <tr ng-repeat="alumno in $ctrl.alumnos">
                     <td>{{alumno.NIA}}</td>
                     <td>{{alumno.nombre}}</td>
                     <td>{{alumno.apellido}}</td>
                     <td style="float: right;">
-                        <md-button ng-click="detalleAlumno(alumno.NIA)"
+                        <md-button ng-click="$ctrl.detalleAlumno(alumno.NIA)"
                                 class="md-icon-button md-primary">
                             <md-icon md-svg-icon="lib/assets/edit.svg"></md-icon>
                         </md-button>
-                        <md-button ng-click="eliminarAlumno(alumno.NIA)"
+                        <md-button ng-click="$ctrl.eliminarAlumno(alumno.NIA)"
                                 class="md-icon-button md-warn">
                             <md-icon md-svg-icon="lib/assets/delete.svg"></md-icon>
                         </md-button>
